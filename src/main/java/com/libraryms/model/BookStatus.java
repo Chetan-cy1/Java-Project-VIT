@@ -1,4 +1,5 @@
 package com.libraryms.model;
+
 public enum BookStatus {
     AVAILABLE("Available", "Book is available for borrowing"),
     BORROWED("Borrowed", "Book is currently borrowed by a member"),
@@ -38,3 +39,4 @@ public enum BookStatus {
     }
 
 }
+
