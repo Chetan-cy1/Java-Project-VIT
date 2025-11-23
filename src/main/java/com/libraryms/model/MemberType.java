@@ -1,4 +1,5 @@
 package com.libraryms.model;
+
 public enum MemberType {
     STUDENT("Student", "Student membership with basic privileges", 5, 12),
     FACULTY("Faculty", "Faculty membership with extended privileges", 10, 24),
@@ -50,3 +51,4 @@ public enum MemberType {
     }
 
 }
+
