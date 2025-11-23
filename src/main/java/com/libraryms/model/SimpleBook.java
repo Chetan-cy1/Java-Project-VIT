@@ -3,10 +3,6 @@ package com.libraryms.model;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Simplified Book model without external dependencies.
- * Contains all book-related information for the library management system.
- */
 public class SimpleBook {
     
     private String isbn;
@@ -22,7 +18,7 @@ public class SimpleBook {
     private LocalDateTime dateAdded;
     private LocalDateTime lastUpdated;
     
-    // Constructors
+   
     public SimpleBook() {
         this.dateAdded = LocalDateTime.now();
         this.lastUpdated = LocalDateTime.now();
@@ -39,7 +35,6 @@ public class SimpleBook {
         this.category = category;
     }
     
-    // Getters and Setters
     public String getIsbn() { return isbn; }
     public void setIsbn(String isbn) { 
         this.isbn = isbn; 
@@ -106,7 +101,6 @@ public class SimpleBook {
     public LocalDateTime getLastUpdated() { return lastUpdated; }
     public void setLastUpdated(LocalDateTime lastUpdated) { this.lastUpdated = lastUpdated; }
     
-    // Business methods
     public boolean isAvailable() {
         return status == BookStatus.AVAILABLE && availableCopies > 0;
     }
@@ -129,7 +123,6 @@ public class SimpleBook {
         }
     }
     
-    // Utility methods
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -148,4 +141,5 @@ public class SimpleBook {
         return String.format("Book{isbn='%s', title='%s', author='%s', category=%s, available=%d/%d}", 
                            isbn, title, author, category, availableCopies, totalCopies);
     }
+
 }
