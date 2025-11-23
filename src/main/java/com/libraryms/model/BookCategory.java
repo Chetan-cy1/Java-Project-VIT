@@ -1,9 +1,6 @@
 package com.libraryms.model;
 
-/**
- * Enumeration representing different book categories in the library.
- * Used for organizing and filtering books by subject area.
- */
+
 public enum BookCategory {
     FICTION("Fiction", "Literary works of imagination"),
     NON_FICTION("Non-Fiction", "Factual and informational works"),
@@ -41,9 +38,7 @@ public enum BookCategory {
         return displayName;
     }
     
-    /**
-     * Get category by display name (case-insensitive)
-     */
+   
     public static BookCategory fromDisplayName(String displayName) {
         for (BookCategory category : values()) {
             if (category.displayName.equalsIgnoreCase(displayName)) {
@@ -52,4 +47,5 @@ public enum BookCategory {
         }
         return OTHER;
     }
+
 }
