@@ -2,9 +2,6 @@ package com.libraryms.model;
 
 import java.time.LocalDate;
 
-/**
- * Simplified Member class for the Library Management System without external dependencies.
- */
 public class SimpleMember {
     private String memberId;
     private String firstName;
@@ -20,7 +17,6 @@ public class SimpleMember {
     private double totalFinesOwed;
     private int currentBorrowedBooks;
 
-    // Constructor
     public SimpleMember(String memberId, String firstName, String lastName, String email, MemberType memberType) {
         this.memberId = memberId;
         this.firstName = firstName;
@@ -34,7 +30,6 @@ public class SimpleMember {
         this.currentBorrowedBooks = 0;
     }
 
-    // Getters and Setters
     public String getMemberId() { return memberId; }
     public void setMemberId(String memberId) { this.memberId = memberId; }
 
@@ -74,7 +69,6 @@ public class SimpleMember {
     public int getCurrentBorrowedBooks() { return currentBorrowedBooks; }
     public void setCurrentBorrowedBooks(int currentBorrowedBooks) { this.currentBorrowedBooks = currentBorrowedBooks; }
 
-    // Helper methods
     public String getFullName() {
         return firstName + " " + lastName;
     }
@@ -122,4 +116,5 @@ public class SimpleMember {
                 memberId, getFullName(), email, memberType.getDisplayName(), status.getDisplayName(),
                 currentBorrowedBooks, memberType.getMaxBooksAllowed(), totalFinesOwed);
     }
+
 }
