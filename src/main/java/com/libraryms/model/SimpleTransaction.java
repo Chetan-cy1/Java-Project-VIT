@@ -3,9 +3,6 @@ package com.libraryms.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- * Simplified Transaction class for the Library Management System.
- */
 public class SimpleTransaction {
     private String transactionId;
     private String memberId;
@@ -18,7 +15,6 @@ public class SimpleTransaction {
     private TransactionStatus status;
     private String notes;
 
-    // Constructor for borrowing
     public SimpleTransaction(String transactionId, String memberId, String bookIsbn, TransactionType type) {
         this.transactionId = transactionId;
         this.memberId = memberId;
@@ -29,11 +25,10 @@ public class SimpleTransaction {
         this.fineAmount = 0.0;
         
         if (type == TransactionType.BORROW) {
-            this.dueDate = LocalDate.now().plusWeeks(2); // 2 weeks borrowing period
+            this.dueDate = LocalDate.now().plusWeeks(2); 
         }
     }
 
-    // Getters and Setters
     public String getTransactionId() { return transactionId; }
     public void setTransactionId(String transactionId) { this.transactionId = transactionId; }
 
@@ -64,7 +59,6 @@ public class SimpleTransaction {
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
 
-    // Helper methods
     public boolean isOverdue() {
         return type == TransactionType.BORROW && 
                status == TransactionStatus.ACTIVE && 
@@ -80,7 +74,7 @@ public class SimpleTransaction {
     public void calculateFine() {
         if (isOverdue()) {
             long daysOverdue = getDaysOverdue();
-            fineAmount = daysOverdue * 0.50; // $0.50 per day overdue
+            fineAmount = daysOverdue * 0.50; 
         }
     }
 
@@ -96,4 +90,5 @@ public class SimpleTransaction {
                 transactionId, memberId, bookIsbn, type.getDisplayName(),
                 transactionDate.toLocalDate(), dueDate, status.getDisplayName(), fineAmount);
     }
+
 }
