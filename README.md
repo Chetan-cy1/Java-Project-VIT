@@ -1,7 +1,7 @@
 # Digital Library Management System
 
 ## Overview
-A simplified Java-based library management system with a console interface for managing books, members, and transactions in a digital library environment.
+This is a simplified, command-line Library Management System (LMS) built entirely in Java. The primary goal was to create a functional system for handling the core logistics of a small digital library: managing the catalog of books, tracking registered members, and processing all borrowing and return transactions. It features an interactive console interface for ease of use.
 
 ## Features
 ### Core Modules
@@ -184,5 +184,6 @@ The application uses Logback for logging. Configuration is in `src/main/resource
 - **SimpleTransaction**: Transaction record with fine calculation
 
 ---
+
 
 **Note**: This is a console-based application demonstrating core library management functionality. The current version uses in-memory storage - data is not persisted between application runs.
