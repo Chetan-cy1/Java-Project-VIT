@@ -1,7 +1,8 @@
 # Digital Library Management System
 
 ## Overview
-This is a simplified, command-line Library Management System (LMS) built entirely in Java. The primary goal was to create a functional system for handling the core logistics of a small digital library: managing the catalog of books, tracking registered members, and processing all borrowing and return transactions. It features an interactive console interface for ease of use.
+This project is a simple Library Management System written in Java.
+It runs completely in the console and handles basic operations like managing books, maintaining member records, and keeping track of book borrowing and returns. The aim of the project was to create a small working system that shows how a real library might organise its data and day-to-day tasks.
 
 ## Features
 ### Core Modules
@@ -20,7 +21,7 @@ This is a simplified, command-line Library Management System (LMS) built entirel
 - Input Handling: Includes basic checks to ensure user input is valid before processing.
 
 ## Technologies Used
-- **Language**: Java 11
+- **Language**: Java (tested with JAVA 22)
 - **Build Tool**: Apache Maven 3.11.0
 - **Dependencies**: 
   - Jackson (JSON processing)
@@ -55,7 +56,7 @@ java_project/
 ## Installation & Setup
 
 ### Prerequisites
-- **Java 22** 
+- **Java installed (preferably Java 22)** 
 
 ### Steps to Run
 1. **Navigate to project directory:**
@@ -93,7 +94,8 @@ java com.libraryms.LibraryManagementApplication
 ## Usage Instructions
 
 ### Starting the Application
-The system launches with a welcome banner and presents a main menu with three core modules:
+When the application starts, it shows a simple menu.
+From there, you can select:
 
 ```
 ╔════════════════════════════════════════════════════════════════╗
@@ -108,6 +110,7 @@ The system launches with a welcome banner and presents a main menu with three co
 │  0. Exit                                        │
 └─────────────────────────────────────────────────┘
 ```
+Each section has options like adding books, searching books, borrowing, returning, etc.
 
 ### Sample Workflows
 
@@ -134,7 +137,7 @@ The system launches with a welcome banner and presents a main menu with three co
 The application comes pre-loaded with sample data:
 - **Books**: "Effective Java" and "Clean Code"
 - **Members**: Sample student and faculty accounts
-- **Member Types**: Student (5 book limit), Faculty (10 book limit), Staff (7 book limit)
+- **Member Types**: Student (upto 5 books), Faculty (up to 10 books), Staff (up to 7 books)
 
 ## Development Commands
 
@@ -187,5 +190,8 @@ The application uses Logback for logging. Configuration is in `src/main/resource
 ---
 
 
-**Note**: This is a console-based application demonstrating core library management functionality. The current version uses in-memory storage - data is not persisted between application runs.
+**Note**: 
+- Data is not saved permanently. When you close the program, everything resets because the system uses only in-memory lists.
+- This project focuses on the basic working of a library system rather than a full production-ready application.
+
 
