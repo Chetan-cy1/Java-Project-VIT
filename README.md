@@ -5,18 +5,19 @@ This is a simplified, command-line Library Management System (LMS) built entirel
 
 ## Features
 ### Core Modules
-- **Book Management**: Add, search, view, update, and delete books with ISBN tracking
-- **Member Management**: Register members, update information, and view member details
-- **Transaction Management**: Handle book borrowing and returning with automatic fine calculation
+- **Book Catalog**: Simple CRUD (Create, Read, Update, Delete) operations for books. Each book is tracked by its ISBN.
+- **Member Registration**: Allows librarians to register new members, update their contact information, and retrieve member details.
+- **Transaction Processing**: Manages the entire borrowing lifecycle, from loaning a book to processing its return, including automatic fine calculations.
 
 ### Key Capabilities
-- Interactive console-based user interface
-- Real-time book availability tracking
+- Menu-Driven Interface: The application runs entirely within the console using clear text menus.
+- Real-time Stock Check: Tracks the current number of available copies for every book.
 - Member borrowing limits based on membership type
-- Automatic fine calculation for overdue books
-- Transaction history tracking
-- Search functionality for books and members
-- Data validation and error handling
+- Borrowing Controls: Enforces member-specific borrowing limits based on their membership type (e.g., Student, Faculty).
+- Automated Fine System: Calculates and applies fines immediately when a book is returned overdue.
+- History Tracking: Maintains a record of all borrowing and return events.
+- Search Filters: Quick search functionality for locating specific books or members.
+- Input Handling: Includes basic checks to ensure user input is valid before processing.
 
 ## Technologies Used
 - **Language**: Java 11
@@ -54,7 +55,7 @@ java_project/
 ## Installation & Setup
 
 ### Prerequisites
-- **Java 11** or higher (You have Java 22 ✓)
+- **Java 22** 
 
 ### Steps to Run
 1. **Navigate to project directory:**
@@ -96,8 +97,8 @@ The system launches with a welcome banner and presents a main menu with three co
 
 ```
 ╔════════════════════════════════════════════════════════════════╗
-║              Digital Library Management System                ║
-║                     Version 1.0.0                            ║
+║              Digital Library Management System                 ║
+║                     Version 1.0.0                              ║
 ╚════════════════════════════════════════════════════════════════╝
 
 ┌─────────────────── MAIN MENU ───────────────────┐
@@ -187,3 +188,4 @@ The application uses Logback for logging. Configuration is in `src/main/resource
 
 
 **Note**: This is a console-based application demonstrating core library management functionality. The current version uses in-memory storage - data is not persisted between application runs.
+
