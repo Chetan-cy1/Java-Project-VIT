@@ -5,12 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-/**
- * Simplified Library Management Application with only 3 core modules:
- * 1. Book Management
- * 2. Member Management  
- * 3. Transaction Management
- */
 public class LibraryManagementApplication {
 
     private final Scanner scanner;
@@ -94,8 +88,8 @@ public class LibraryManagementApplication {
 
     private void printWelcomeBanner() {
         System.out.println("╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║              Digital Library Management System                ║");
-        System.out.println("║                     Version 1.0.0                            ║");
+        System.out.println("║              Digital Library Management System                 ║");
+        System.out.println("║                     Version 1.0.0                              ║");
         System.out.println("╚════════════════════════════════════════════════════════════════╝");
         System.out.println();
     }
@@ -109,7 +103,8 @@ public class LibraryManagementApplication {
         System.out.println("└─────────────────────────────────────────────────┘");
     }
 
-    // =================== BOOK MANAGEMENT ===================
+
+
     
     private void handleBookManagement() {
         boolean backToMain = false;
@@ -164,7 +159,6 @@ public class LibraryManagementApplication {
         try {
             String isbn = readStringInput("Enter ISBN: ");
             
-            // Check for duplicate ISBN
             if (findBookByIsbn(isbn) != null) {
                 System.out.println("A book with this ISBN already exists!");
                 return;
@@ -188,7 +182,6 @@ public class LibraryManagementApplication {
             
             SimpleBook book = new SimpleBook(isbn, title, author, category);
             
-            // Optional fields
             String publisher = readStringInput("Enter Publisher (optional): ");
             if (!publisher.trim().isEmpty()) {
                 book.setPublisher(publisher);
@@ -332,7 +325,8 @@ public class LibraryManagementApplication {
         return null;
     }
 
-    // =================== MEMBER MANAGEMENT ===================
+
+
     
     private void handleMemberManagement() {
         boolean backToMain = false;
@@ -389,7 +383,6 @@ public class LibraryManagementApplication {
             String lastName = readStringInput("Enter Last Name: ");
             String email = readStringInput("Enter Email: ");
             
-            // Check for duplicate email
             for (SimpleMember existingMember : members) {
                 if (existingMember.getEmail().equalsIgnoreCase(email)) {
                     System.out.println("A member with this email already exists!");
@@ -551,7 +544,10 @@ public class LibraryManagementApplication {
         return null;
     }
 
-    // =================== TRANSACTION MANAGEMENT ===================
+
+
+
+
     
     private void handleTransactionManagement() {
         boolean backToMain = false;
@@ -626,11 +622,10 @@ public class LibraryManagementApplication {
             return;
         }
         
-        // Create transaction
+
         String transactionId = "TXN" + String.format("%06d", nextTransactionId++);
         SimpleTransaction transaction = new SimpleTransaction(transactionId, memberId, isbn, TransactionType.BORROW);
         
-        // Update book and member
         book.borrowCopy();
         member.borrowBook();
         
@@ -676,7 +671,8 @@ public class LibraryManagementApplication {
             return;
         }
         
-        // Complete the return
+
+        
         borrowTransaction.completeReturn();
         book.returnCopy();
         member.returnBook();
@@ -761,7 +757,10 @@ public class LibraryManagementApplication {
         System.out.println("└─────────────┴────────────┴────────────────┴──────────┴─────────────┴─────────────┴─────────────┘");
     }
 
-    // =================== UTILITY METHODS ===================
+
+
+
+
     
     private String readStringInput(String prompt) {
         System.out.print(prompt);
@@ -797,4 +796,5 @@ public class LibraryManagementApplication {
         if (str == null) return "";
         return str.length() <= length ? str : str.substring(0, length - 3) + "...";
     }
+
 }
