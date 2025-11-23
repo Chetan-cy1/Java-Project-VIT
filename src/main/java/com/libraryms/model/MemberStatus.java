@@ -1,4 +1,5 @@
 package com.libraryms.model;
+
 public enum MemberStatus {
     ACTIVE("Active", "Member is active and can use all library services"),
     SUSPENDED("Suspended", "Member is temporarily suspended from borrowing"),
@@ -36,3 +37,4 @@ public enum MemberStatus {
     }
 
 }
+
