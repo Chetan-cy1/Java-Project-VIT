@@ -1,9 +1,4 @@
 package com.libraryms.model;
-
-/**
- * Enumeration representing the current status of a book in the library.
- * Used to track book availability and condition.
- */
 public enum BookStatus {
     AVAILABLE("Available", "Book is available for borrowing"),
     BORROWED("Borrowed", "Book is currently borrowed by a member"),
@@ -34,17 +29,12 @@ public enum BookStatus {
         return displayName;
     }
     
-    /**
-     * Check if this status allows borrowing
-     */
     public boolean canBeBorrowed() {
         return this == AVAILABLE;
     }
     
-    /**
-     * Check if this status is considered active (not lost/withdrawn)
-     */
     public boolean isActive() {
         return this != LOST && this != WITHDRAWN;
     }
+
 }
