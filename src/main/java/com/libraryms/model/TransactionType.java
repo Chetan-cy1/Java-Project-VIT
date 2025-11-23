@@ -1,8 +1,5 @@
 package com.libraryms.model;
 
-/**
- * Enumeration representing different types of transactions in the library.
- */
 public enum TransactionType {
     BORROW("Borrow", "Member borrows a book"),
     RETURN("Return", "Member returns a borrowed book"),
@@ -34,17 +31,12 @@ public enum TransactionType {
         return displayName;
     }
     
-    /**
-     * Check if this transaction type affects book availability
-     */
     public boolean affectsAvailability() {
         return this == BORROW || this == RETURN || this == LOST_BOOK;
     }
     
-    /**
-     * Check if this transaction type requires book to be available
-     */
     public boolean requiresAvailableBook() {
         return this == BORROW || this == RESERVE;
     }
+
 }
