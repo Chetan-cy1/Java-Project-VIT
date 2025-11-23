@@ -1,4 +1,5 @@
 package com.libraryms.model;
+
 public enum BookCategory {
     FICTION("Fiction", "Literary works of imagination"),
     NON_FICTION("Non-Fiction", "Factual and informational works"),
@@ -47,5 +48,6 @@ public enum BookCategory {
     }
 
 }
+
 
 
