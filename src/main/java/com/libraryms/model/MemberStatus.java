@@ -1,9 +1,4 @@
 package com.libraryms.model;
-
-/**
- * Enumeration representing the current status of a library member.
- * Used to control member access and borrowing privileges.
- */
 public enum MemberStatus {
     ACTIVE("Active", "Member is active and can use all library services"),
     SUSPENDED("Suspended", "Member is temporarily suspended from borrowing"),
@@ -32,17 +27,12 @@ public enum MemberStatus {
         return displayName;
     }
     
-    /**
-     * Check if this status allows borrowing books
-     */
     public boolean canBorrowBooks() {
         return this == ACTIVE;
     }
     
-    /**
-     * Check if this status allows renewing membership
-     */
     public boolean canRenewMembership() {
         return this == EXPIRED || this == INACTIVE;
     }
+
 }
