@@ -1,9 +1,4 @@
 package com.libraryms.model;
-
-/**
- * Enumeration representing different types of library membership.
- * Each type has specific borrowing limits and membership duration.
- */
 public enum MemberType {
     STUDENT("Student", "Student membership with basic privileges", 5, 12),
     FACULTY("Faculty", "Faculty membership with extended privileges", 10, 24),
@@ -44,16 +39,14 @@ public enum MemberType {
     public String toString() {
         return displayName;
     }
-    
-    /**
-     * Get member type by display name (case-insensitive)
-     */
+   
     public static MemberType fromDisplayName(String displayName) {
         for (MemberType type : values()) {
             if (type.displayName.equalsIgnoreCase(displayName)) {
                 return type;
             }
         }
-        return PUBLIC; // Default fallback
+        return PUBLIC; 
     }
+
 }
